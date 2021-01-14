@@ -1,0 +1,212 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+<h2>Add form</h2>
+<form action="saveForm" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+
+        <input type="hidden"  class="form-control" name="asset_id" value={{d.asset_id}}>
+        <!-- <input type="hidden"  class="form-control" name="q" value={{q}}>
+        -->
+    </div>
+    <div class="form-group">
+        <label for="">System</label>
+        <select name="system" id="system" class="form-group">
+
+            {% for s in systems %}
+                 <option value={{s.system_id}}>{{s.system_name}}</option>
+            {% endfor %}
+        </select>
+
+
+        <label for="">Category</label>
+        <select name="category" id="category" class="form-group">
+
+            {% for c in categorys %}
+                 <option value={{c.category_id}}>{{c.category_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Host Name</label>
+        <input type="text"  class="form-control" name="hostname">
+    </div>
+    <div class="form-group">
+        <label for="">Project</label>
+        <input type="text"  class="form-control" name="project" >
+    </div>
+    <div class="form-group">
+        <label for="">Device Name</label>
+        <input type="text"  class="form-control" name="devicename" >
+    </div>
+     <div class="form-group">
+        <label for="">User</label>
+        <input type="text"  class="form-control" name="user" >
+    </div>
+    <div class="form-group">
+        <label for="">Brand</label>
+        <select name="brand" id="brand">
+
+            {% for b in brands %}
+
+                 <option value={{b.brand_id}}>{{b.brand_name}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="">Model</label>
+        <select name="model" id="models">
+
+            {% for m in models %}
+
+                 <option value={{m.model_id}}>{{m.model_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Serial Number</label>
+        <input type="text"  class="form-control" name="serial_number" >
+    </div>
+    <div class="form-group">
+        <label for="">imei</label>
+        <input type="text"  class="form-control" name="imei" >
+    </div>
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text"  class="form-control" name="phone" >
+    </div>
+     <div class="form-group">
+        <label for="">SIM</label>
+        <input type="text"  class="form-control" name="sim" >
+    </div>
+    <div class="form-group">
+        <label for="">mac address lan</label>
+        <input type="text"  class="form-control" name="mac_address_lan" >
+    </div>
+    <div class="form-group">
+        <label for="">mac address WiFi</label>
+        <input type="text"  class="form-control" name="mac_address_wifi" >
+    </div>
+    <div class="form-group">
+        <label for="">IP WiFi</label>
+        <input type="text"  class="form-control" name="ip_wifi" >
+    </div>
+    <div class="form-group">
+        <label for="">asset</label>
+        <input type="text"  class="form-control" name="asset" >
+    </div>
+    <div class="form-group">
+        <label for="">location</label>
+        <input type="text"  class="form-control" name="location" >
+    </div>
+     <div class="form-group">
+        <label for="">branch</label>
+        <select name="branch" id="branch">
+
+            {% for b in branchs %}
+                 <option value={{b.branch_id}}>{{b.branch_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Building</label>
+        <input type="text"  class="form-control" name="building">
+    </div>
+    <div class="form-group">
+        <label for="">Floor</label>
+        <input type="text"  class="form-control" name="floor" >
+    </div>
+     <div class="form-group">
+        <label for="">status</label>
+        <select name="status_id" id="status_id">
+            {% for s in status %}
+
+                 <option value={{s.status_id}}>{{s.status_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+     <div class="form-group">
+        <label for="">PO</label>
+        <input type="text"  class="form-control" name="po" >
+    </div>
+    <div class="form-group">
+        <label for="">invoice</label>
+        <input type="text"  class="form-control" name="invoice" >
+    </div>
+
+     <div class="form-group">
+        <label for="">remark</label>
+        <input type="text" class="form-control" name="remark" >
+    </div>
+
+
+    <div class="form-group">
+        <label for="">เลขที่สัญญา</label>
+        <input type="text" class="form-control" name="Bookno" >
+    </div>
+    <div class="form-group">
+        <label for="">สัญญา</label>
+        <select name="condition_no" id="condition_no">
+
+            <option value="Rent">เครื่องเช่า</option>
+            <option value="Buy">เครื่องซื้อ</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">windows edition</label>
+        <input type="text" class="form-control" name="windows_edition">
+    </div>
+    <div class="form-group">
+        <label for="">win_product_key</label>
+        <input type="text" class="form-control" name="win_product_key" >
+    </div>
+    <div class="form-group">
+        <label for="">office_edition</label>
+        <input type="text" class="form-control" name="office_edition" >
+    </div>
+    <div class="form-group">
+        <label for="">office_product_key</label>
+        <input type="text" class="form-control" name="office_product_key">
+    </div>
+    <div class="form-group">
+        <label for="">line</label>
+        <input type="text" class="form-control" name="line" >
+    </div>
+    <div class="form-group">
+        <label for="">vpn</label>
+        <input type="text" class="form-control" name="vpn" >
+    </div>
+    <div class="form-group">
+        <label for="">cpu</label>
+        <input type="text" class="form-control" name="cpu" >
+    </div>
+    <div class="form-group">
+        <label for="">ram</label>
+        <input type="text" class="form-control" name="ram" >
+    </div>
+    <div class="form-group">
+        <label for="">storage</label>
+        <input type="text" class="form-control" name="storage" >
+    </div>
+    <div class="form-group">
+        <label for="">filepath</label>
+        <input type="text" class="form-control" name="filepath" >
+    </div>
+    <div class="form-group">
+        <label for="">costcenter</label>
+        <input type="text" class="form-control" name="costcenter">
+    </div>
+
+
+
+    <input type="submit" value="SAVE" class="btn btn-success">
+
+</form>
+
+
+
+{% endblock %}

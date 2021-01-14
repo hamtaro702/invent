@@ -1,0 +1,222 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for d in data %}
+
+<h2>Edit form</h2>
+<form action="saveForm" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+
+        <input type="hidden"  class="form-control" name="asset_id" value={{d.asset_id}}>
+        <input type="hidden"  class="form-control" name="q" value={{q}}>
+    </div>
+    <div class="form-group">
+        <label for="">System</label>
+        <select name="system" id="system" class="form-group">
+
+            {% for s in systems %}
+                {% if d.system_id == s.system_id %}
+                <option selected="selected" value={{s.system_id}}>{{s.system_name}}</option>
+                {% endif %}
+                 <option value={{s.system_id}}>{{s.system_name}}</option>
+            {% endfor %}
+        </select>
+
+
+        <label for="">Category</label>
+        <select name="category" id="category" class="form-group">
+
+            {% for c in categorys %}
+                {% if c.category_id == d.category_id %}
+                <option selected="selected" value={{c.category_id}}>{{c.category_name}}</option>
+                {% endif %}
+                 <option value={{c.category_id}}>{{c.category_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Host Name</label>
+        <input type="text"  class="form-control" name="hostname" value={{d.host_name}}>
+    </div>
+    <div class="form-group">
+        <label for="">Project</label>
+        <input type="text"  class="form-control" name="project" value={{d.project}}>
+    </div>
+    <div class="form-group">
+        <label for="">Device Name</label>
+        <input type="text"  class="form-control" name="devicename" value={{d.device_name}}>
+    </div>
+     <div class="form-group">
+        <label for="">User</label>
+        <input type="text"  class="form-control" name="user" value={{d.user}}>
+    </div>
+    <div class="form-group">
+        <label for="">Brand</label>
+        <select name="brand" id="brand">
+
+            {% for b in brands %}
+                {% if b.brand_id == d.brand_id %}
+                <option selected="selected" value={{b.brand_id}}>{{b.brand_name}}</option>
+                {% endif %}
+                 <option value={{b.brand_id}}>{{b.brand_name}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="">Model</label>
+        <select name="model" id="models">
+
+            {% for m in models %}
+                {% if m.model_id == d.model_id %}
+                <option selected="selected" value={{m.model_id}}>{{m.model_name}}</option>
+                {% endif %}
+                 <option value={{m.model_id}}>{{m.model_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Serial Number</label>
+        <input type="text"  class="form-control" name="serial_number" value={{d.serial_number}}>
+    </div>
+    <div class="form-group">
+        <label for="">imei</label>
+        <input type="text"  class="form-control" name="imei" value={{d.imei}}>
+    </div>
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input type="text"  class="form-control" name="phone" value={{d.phone}}>
+    </div>
+     <div class="form-group">
+        <label for="">SIM</label>
+        <input type="text"  class="form-control" name="sim" value={{d.sim}}>
+    </div>
+    <div class="form-group">
+        <label for="">mac address lan</label>
+        <input type="text"  class="form-control" name="mac_address_lan" value={{d.mac_address_lan}}>
+    </div>
+    <div class="form-group">
+        <label for="">mac address WiFi</label>
+        <input type="text"  class="form-control" name="mac_address_wifi" value={{d.mac_address_wifi}}>
+    </div>
+    <div class="form-group">
+        <label for="">IP WiFi</label>
+        <input type="text"  class="form-control" name="ip_wifi" value={{d.ip_wifi}}>
+    </div>
+    <div class="form-group">
+        <label for="">asset</label>
+        <input type="text"  class="form-control" name="asset" value={{d.asset}}>
+    </div>
+    <div class="form-group">
+        <label for="">location</label>
+        <input type="text"  class="form-control" name="location" value={{d.location}}>
+    </div>
+     <div class="form-group">
+        <label for="">branch</label>
+        <select name="branch" id="branch">
+
+            {% for b in branchs %}
+                {% if b.branch_id == d.branch_id %}
+                <option selected="selected" value={{b.branch_id}}>{{b.branch_name}}</option>
+                {% endif %}
+                 <option value={{b.branch_id}}>{{b.branch_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Building</label>
+        <input type="text"  class="form-control" name="building" value={{d.building}}>
+    </div>
+    <div class="form-group">
+        <label for="">Floor</label>
+        <input type="text"  class="form-control" name="floor" value={{d.floor}}>
+    </div>
+     <div class="form-group">
+        <label for="">status</label>
+         <select name="status_id" id="status_id">
+
+            {% for s in status %}
+                {% if s.status_id == d.status_id %}
+                <option selected="selected" value={{s.status_id}}>{{s.status_name}}</option>
+                {% endif %}
+                 <option value={{s.status_id}}>{{s.status_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+     <div class="form-group">
+        <label for="">PO</label>
+        <input type="text"  class="form-control" name="po" value={{d.po}}>
+    </div>
+    <div class="form-group">
+        <label for="">invoice</label>
+        <input type="text"  class="form-control" name="invoice" value={{d.invoice}}>
+    </div>
+
+     <div class="form-group">
+        <label for="">remark</label>
+        <input type="text" class="form-control" name="remark" value={{d.remark}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Bookno</label>
+        <input type="text" class="form-control" name="Bookno" value={{d.Bookno}}>
+    </div>
+    <div class="form-group">
+        <label for="">condition_no</label>
+        <input type="text" class="form-control" name="condition_no" value={{d.condition_no}}>
+    </div>
+    <div class="form-group">
+        <label for="">windows edition</label>
+        <input type="text" class="form-control" name="windows_edition" value={{d.windows_edition}}>
+    </div>
+    <div class="form-group">
+        <label for="">win_product_key</label>
+        <input type="text" class="form-control" name="win_product_key" value={{d.win_product_key}}>
+    </div>
+    <div class="form-group">
+        <label for="">office_edition</label>
+        <input type="text" class="form-control" name="office_edition" value={{d.office_edition}}>
+    </div>
+    <div class="form-group">
+        <label for="">office_product_key</label>
+        <input type="text" class="form-control" name="office_product_key" value={{d.office_product_key}}>
+    </div>
+    <div class="form-group">
+        <label for="">line</label>
+        <input type="text" class="form-control" name="line" value={{d.line}}>
+    </div>
+    <div class="form-group">
+        <label for="">vpn</label>
+        <input type="text" class="form-control" name="vpn" value={{d.vpn}}>
+    </div>
+    <div class="form-group">
+        <label for="">cpu</label>
+        <input type="text" class="form-control" name="cpu" value={{d.cpu}}>
+    </div>
+    <div class="form-group">
+        <label for="">ram</label>
+        <input type="text" class="form-control" name="ram" value={{d.ram}}>
+    </div>
+    <div class="form-group">
+        <label for="">storage</label>
+        <input type="text" class="form-control" name="storage" value={{d.storage}}>
+    </div>
+    <div class="form-group">
+        <label for="">filepath</label>
+        <input type="text" class="form-control" name="filepath" value={{d.filepath}}>
+    </div>
+    <div class="form-group">
+        <label for="">costcenter</label>
+        <input type="text" class="form-control" name="costcenter" value={{d.costcenter}}>
+    </div>
+
+
+
+    <input type="submit" value="SAVE" class="btn btn-success">
+
+</form>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}" />
+<script defer src="{% static 'js/all.js' %}"></script>
+
+<h2 align="center">Search form</h2>
+
+<form method="GET" action="fetchALL" >
+    <div class="input-field" align="right" >
+       <button class="btn btn-primary" type="submit" name="action">Fetchall Data</button>
+    </div>
+</form>
+
+<form method="GET" action="{% url 'export_users_xls' %}" >
+    <div class="input-field" align="right">
+       <button class="btn btn-warning" type="submit" name="action">Export All Data</button>
+    </div>
+</form>
+
+
+<p></p>
+<form method="GET" action="searchGlobal" >
+    <div class="input-field" align="right">
+        <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Search Here...">
+       <button class="btn btn-success" type="submit" name="action">Search</button>
+    </div>
+</form>
+
+
+
+<div class="table-responsive" style="color:gray;">
+
+ <table class="table" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+
+      <th scope="col">Action</th>
+      <th scope="col">Staus</th>
+      <th scope="col">Hostname</th>
+      <th scope="col">User</th>
+        <th scope="col">System</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Model</th>
+      <th scope="col">Category</th>
+      <th scope="col">Branch</th>
+      <th scope="col">Project</th>
+      <th scope="col">DeviceName</th>
+      <th scope="col">SerialNumber</th>
+      <th scope="col">imei</th>
+      <th scope="col">Phone</th>
+      <th scope="col">sim</th>
+      <th scope="col">MacAddressLan</th>
+      <th scope="col">MacAddressWifi</th>
+      <th scope="col">IP WiFi</th>
+      <th scope="col">IP Lan</th>
+      <th scope="col">Asset Code</th>
+      <th scope="col">Location</th>
+      <th scope="col">Building</th>
+      <th scope="col">PO</th>
+      <th scope="col">Date StockIn</th>
+      <th scope="col">Date StockOut</th>
+      <th scope="col">Remark</th>
+      <th scope="col">CreateDate</th>
+      <th scope="col">CreateBy</th>
+        <th scope="col">Modified Date</th>
+        <th scope="col">Modified By</th>
+        <th scope="col">เลขที่สัญญา</th>
+        <th scope="col">สัญญา</th>
+        <th scope="col">Windows Edition</th>
+        <th scope="col">Win Product Key</th>
+        <th scope="col">Office Edition</th>
+        <th scope="col">Office Product Key</th>
+        <th scope="col">Line</th>
+        <th scope="col">VPN</th>
+        <th scope="col">CPU</th>
+        <th scope="col">RAM</th>
+        <th scope="col">Storage</th>
+        <th scope="col">Filepath</th>
+        <th scope="col">CostCenter</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for d in data %}
+    <tr>
+
+      <td ><a href="/asset?assetid={{d.asset_id}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class='ml-2 text-success'><b><i class="far fa-edit"></i></b></a>
+           <a href="/assetDelete?assetid={{d.asset_id}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="text-danger" onclick="return confirm('Are you sure you want to delete this?')"><b><i class="fas fa-eraser"></i></b></a>
+      </td>
+      <th >{{d.status_name}}</th>
+        <th>{{d.host_name}}</th>
+        <th>{{d.user}}</th>
+        <th>{{d.system_name}}</th>
+      <th >{{d.brand_name}}</th>
+      <th >{{d.model_name}}</th>
+      <th >{{d.category_name}}</th>
+        <th >{{d.branch_name}}</th>
+        <td>{{d.project }}</td>
+      <td>{{d.device_name }}</td>
+      <td>{{d.serial_number }}</td>
+      <td>{{d.imei }}</td>
+      <td>{{d.phone }}</td>
+      <td>{{d.sim }}</td>
+      <td>{{d.mac_address_lan }}</td>
+      <td>{{d.mac_address_wifi }}</td>
+      <td>{{d.ip_wifi }}</td>
+      <td>{{d.ip_lan }}</td>
+      <td>{{d.asset }}</td>
+      <td>{{d.location }}</td>
+      <td>{{d.building }}</td>
+      <td>{{d.po  }}</td>
+      <td>{{d.date_stockin  }}</td>
+      <td>{{d.date_stockout  }}</td>
+      <td>{{d.remark  }}</td>
+        <td>{{d.createdate  }}</td>
+        <td>{{d.createby  }}</td>
+       <td>{{d.modifieddate  }}</td>
+      <td>{{d.modifiedby  }}</td>
+      <td>{{d.bookno  }}</td>
+      <td>{{d.condition_no  }}</td>
+      <td>{{d.windows_edition  }}</td>
+      <td>{{d.win_product_key  }}</td>
+      <td>{{d.office_edition  }}</td>
+      <td>{{d.office_product_key  }}</td>
+      <td>{{d.line  }}</td>
+      <td>{{d.vpn  }}</td>
+      <td>{{d.cpu  }}</td>
+      <td>{{d.ram  }}</td>
+      <td>{{d.storage  }}</td>
+      <td>{{d.filepath  }}</td>
+      <td>{{d.costcenter  }}</td>
+
+
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<div class="pages">
+    <div class="pages">
+    {% if data.has_previous %}
+
+        <a class="prev btn btn-info" href="?page={{data.previous_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Prev</a>
+    {% endif %}
+    {% if data.has_next %}
+        <a class="next btn btn-info" href="?page={{data.next_page_number}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a>
+    {% endif %}
+
+        <ul class="pagination">
+        {% for pg in page_range %}
+            {% if data.number == pg %}
+                <li class="active"><a href="?page={{pg}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="btn btn-default" style="color:red;">{{pg}}</a></li>
+            {% else %}
+                <li><a href="?page={{pg}}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="btn">{{pg}}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+    <span class="clear_both"></span>
+</div>
+
+{% endblock %}

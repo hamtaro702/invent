@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+   {{name}}
+<h1 align="center"> Create From </h1>
+<form action="addForm" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="">User</label>
+        <input type="text"  class="form-control" name="user">
+    </div>a
+    <div class="form-group">
+        <label for="">pass</label>
+        <input type="text" class="form-control" name="password">
+    </div>
+    <input type="submit" value="click" class="btn btn-success">
+
+</form>
+
+
+{% endblock %}

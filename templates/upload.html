@@ -1,0 +1,35 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+        <form action="{% url "readExcel" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p></p>
+            <input type="file"
+                   class="btn btn-outline-success"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p></p>
+            <p>
+            <input type="submit"
+                   class="btn btn-outline-success"
+                   value="Upload"
+                   >
+            </p>
+        </form>
+
+        <p></p>
+        <hr>
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+
+
+{% endblock %}

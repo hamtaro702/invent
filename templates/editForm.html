@@ -1,0 +1,1718 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1> Edit Form </h1>
+
+<form  action="" method="post" >
+<div>
+
+  <fieldset class="module aligned ">
+        <div class="form-row field-system">
+                <div>
+                    <label for="id_system">System:</label>
+                    <div class="related-widget-wrapper">
+                    <select name="system" id="id_system">
+  <option value="">---------</option>
+
+  <option value="13">AssetSystem object (13)</option>
+
+                  <option value="14">AssetSystem object (14)</option>
+
+                  <option value="15" selected="">AssetSystem object (15)</option>
+
+                  <option value="17">AssetSystem object (17)</option>
+
+                  <option value="19">AssetSystem object (19)</option>
+
+                  <option value="20">AssetSystem object (20)</option>
+
+                </select>
+                </div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-category">
+
+
+                <div>
+
+
+                        <label for="id_category">Category:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="category" id="id_category">
+  <option value="">---------</option>
+
+  <option value="30">AssetCategory object (30)</option>
+
+  <option value="31">AssetCategory object (31)</option>
+
+  <option value="32">AssetCategory object (32)</option>
+
+  <option value="33">AssetCategory object (33)</option>
+
+  <option value="34">AssetCategory object (34)</option>
+
+  <option value="35">AssetCategory object (35)</option>
+
+  <option value="36">AssetCategory object (36)</option>
+
+  <option value="37">AssetCategory object (37)</option>
+
+  <option value="41">AssetCategory object (41)</option>
+
+  <option value="42">AssetCategory object (42)</option>
+
+  <option value="43">AssetCategory object (43)</option>
+
+  <option value="44">AssetCategory object (44)</option>
+
+  <option value="45" selected="">AssetCategory object (45)</option>
+
+  <option value="47">AssetCategory object (47)</option>
+
+  <option value="48">AssetCategory object (48)</option>
+
+  <option value="49">AssetCategory object (49)</option>
+
+  <option value="50">AssetCategory object (50)</option>
+
+  <option value="51">AssetCategory object (51)</option>
+
+  <option value="52">AssetCategory object (52)</option>
+
+  <option value="53">AssetCategory object (53)</option>
+
+  <option value="54">AssetCategory object (54)</option>
+
+  <option value="55">AssetCategory object (55)</option>
+
+  <option value="56">AssetCategory object (56)</option>
+
+  <option value="57">AssetCategory object (57)</option>
+
+  <option value="58">AssetCategory object (58)</option>
+
+  <option value="59">AssetCategory object (59)</option>
+
+  <option value="60">AssetCategory object (60)</option>
+
+  <option value="61">AssetCategory object (61)</option>
+
+  <option value="62">AssetCategory object (62)</option>
+
+  <option value="63">AssetCategory object (63)</option>
+
+  <option value="64">AssetCategory object (64)</option>
+
+</select>
+
+
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-project">
+
+
+                <div>
+
+
+                        <label for="id_project">Project:</label>
+
+                            <input type="text" name="project" class="vTextField" maxlength="1000" id="id_project">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-device_name">
+
+
+                <div>
+
+
+                        <label for="id_device_name">Device name:</label>
+
+                            <input type="text" name="device_name" class="vTextField" maxlength="255" id="id_device_name">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-host_name">
+
+
+                <div>
+
+
+                        <label for="id_host_name">Host name:</label>
+
+                            <input type="text" name="host_name" value="HB-NA-HY1S214" class="vTextField" maxlength="50" id="id_host_name">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-user">
+
+
+                <div>
+
+
+                        <label for="id_user">User:</label>
+
+                            <input type="text" name="user" class="vTextField" maxlength="100" id="id_user">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-brand">
+
+
+                <div>
+
+
+                        <label for="id_brand">Brand:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="brand" id="id_brand">
+  <option value="">---------</option>
+
+  <option value="22">AssetBrand object (22)</option>
+
+  <option value="23" selected="">AssetBrand object (23)</option>
+
+  <option value="24">AssetBrand object (24)</option>
+
+  <option value="25">AssetBrand object (25)</option>
+
+  <option value="26">AssetBrand object (26)</option>
+
+  <option value="27">AssetBrand object (27)</option>
+
+  <option value="28">AssetBrand object (28)</option>
+
+  <option value="29">AssetBrand object (29)</option>
+
+  <option value="30">AssetBrand object (30)</option>
+
+  <option value="31">AssetBrand object (31)</option>
+
+  <option value="32">AssetBrand object (32)</option>
+
+  <option value="34">AssetBrand object (34)</option>
+
+  <option value="35">AssetBrand object (35)</option>
+
+  <option value="36">AssetBrand object (36)</option>
+
+  <option value="37">AssetBrand object (37)</option>
+
+  <option value="38">AssetBrand object (38)</option>
+
+  <option value="39">AssetBrand object (39)</option>
+
+  <option value="41">AssetBrand object (41)</option>
+
+  <option value="42">AssetBrand object (42)</option>
+
+  <option value="44">AssetBrand object (44)</option>
+
+  <option value="45">AssetBrand object (45)</option>
+
+  <option value="46">AssetBrand object (46)</option>
+
+  <option value="47">AssetBrand object (47)</option>
+
+  <option value="48">AssetBrand object (48)</option>
+
+  <option value="49">AssetBrand object (49)</option>
+
+  <option value="50">AssetBrand object (50)</option>
+
+  <option value="51">AssetBrand object (51)</option>
+
+  <option value="52">AssetBrand object (52)</option>
+
+  <option value="53">AssetBrand object (53)</option>
+
+  <option value="54">AssetBrand object (54)</option>
+
+  <option value="55">AssetBrand object (55)</option>
+
+  <option value="56">AssetBrand object (56)</option>
+
+  <option value="57">AssetBrand object (57)</option>
+
+  <option value="58">AssetBrand object (58)</option>
+
+  <option value="59">AssetBrand object (59)</option>
+
+  <option value="65">AssetBrand object (65)</option>
+
+  <option value="66">AssetBrand object (66)</option>
+
+  <option value="67">AssetBrand object (67)</option>
+
+  <option value="68">AssetBrand object (68)</option>
+
+  <option value="69">AssetBrand object (69)</option>
+
+  <option value="70">AssetBrand object (70)</option>
+
+  <option value="71">AssetBrand object (71)</option>
+
+  <option value="72">AssetBrand object (72)</option>
+
+  <option value="73">AssetBrand object (73)</option>
+
+  <option value="74">AssetBrand object (74)</option>
+
+  <option value="75">AssetBrand object (75)</option>
+
+  <option value="76">AssetBrand object (76)</option>
+
+  <option value="77">AssetBrand object (77)</option>
+
+  <option value="78">AssetBrand object (78)</option>
+
+  <option value="79">AssetBrand object (79)</option>
+
+  <option value="80">AssetBrand object (80)</option>
+
+  <option value="81">AssetBrand object (81)</option>
+
+  <option value="82">AssetBrand object (82)</option>
+
+  <option value="83">AssetBrand object (83)</option>
+
+  <option value="84">AssetBrand object (84)</option>
+
+  <option value="85">AssetBrand object (85)</option>
+
+  <option value="86">AssetBrand object (86)</option>
+
+</select>
+
+
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-model">
+
+
+                <div>
+
+
+                        <label for="id_model">Model:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="model" id="id_model">
+  <option value="">---------</option>
+
+  <option value="103">AssetModel object (103)</option>
+
+  <option value="104">AssetModel object (104)</option>
+
+  <option value="105">AssetModel object (105)</option>
+
+  <option value="106">AssetModel object (106)</option>
+
+  <option value="107">AssetModel object (107)</option>
+
+  <option value="108">AssetModel object (108)</option>
+
+  <option value="109">AssetModel object (109)</option>
+
+  <option value="110">AssetModel object (110)</option>
+
+  <option value="111">AssetModel object (111)</option>
+
+  <option value="112">AssetModel object (112)</option>
+
+  <option value="113">AssetModel object (113)</option>
+
+  <option value="114">AssetModel object (114)</option>
+
+  <option value="115">AssetModel object (115)</option>
+
+  <option value="117">AssetModel object (117)</option>
+
+  <option value="118">AssetModel object (118)</option>
+
+  <option value="119">AssetModel object (119)</option>
+
+  <option value="120">AssetModel object (120)</option>
+
+  <option value="121">AssetModel object (121)</option>
+
+  <option value="122">AssetModel object (122)</option>
+
+  <option value="123">AssetModel object (123)</option>
+
+  <option value="124">AssetModel object (124)</option>
+
+  <option value="125">AssetModel object (125)</option>
+
+  <option value="126">AssetModel object (126)</option>
+
+  <option value="127">AssetModel object (127)</option>
+
+  <option value="128">AssetModel object (128)</option>
+
+  <option value="129">AssetModel object (129)</option>
+
+  <option value="130">AssetModel object (130)</option>
+
+  <option value="131">AssetModel object (131)</option>
+
+  <option value="132">AssetModel object (132)</option>
+
+  <option value="133">AssetModel object (133)</option>
+
+  <option value="134">AssetModel object (134)</option>
+
+  <option value="135">AssetModel object (135)</option>
+
+  <option value="136">AssetModel object (136)</option>
+
+  <option value="137">AssetModel object (137)</option>
+
+  <option value="138">AssetModel object (138)</option>
+
+  <option value="139">AssetModel object (139)</option>
+
+  <option value="140">AssetModel object (140)</option>
+
+  <option value="141">AssetModel object (141)</option>
+
+  <option value="142">AssetModel object (142)</option>
+
+  <option value="143">AssetModel object (143)</option>
+
+  <option value="144">AssetModel object (144)</option>
+
+  <option value="145">AssetModel object (145)</option>
+
+  <option value="146">AssetModel object (146)</option>
+
+  <option value="147">AssetModel object (147)</option>
+
+  <option value="148">AssetModel object (148)</option>
+
+  <option value="149">AssetModel object (149)</option>
+
+  <option value="150">AssetModel object (150)</option>
+
+  <option value="151">AssetModel object (151)</option>
+
+  <option value="152">AssetModel object (152)</option>
+
+  <option value="153">AssetModel object (153)</option>
+
+  <option value="154">AssetModel object (154)</option>
+
+  <option value="155">AssetModel object (155)</option>
+
+  <option value="156">AssetModel object (156)</option>
+
+  <option value="157">AssetModel object (157)</option>
+
+  <option value="158">AssetModel object (158)</option>
+
+  <option value="159">AssetModel object (159)</option>
+
+  <option value="160">AssetModel object (160)</option>
+
+  <option value="161">AssetModel object (161)</option>
+
+  <option value="162">AssetModel object (162)</option>
+
+  <option value="163">AssetModel object (163)</option>
+
+  <option value="164">AssetModel object (164)</option>
+
+  <option value="165">AssetModel object (165)</option>
+
+  <option value="166">AssetModel object (166)</option>
+
+  <option value="167">AssetModel object (167)</option>
+
+  <option value="168">AssetModel object (168)</option>
+
+  <option value="169">AssetModel object (169)</option>
+
+  <option value="170">AssetModel object (170)</option>
+
+  <option value="171">AssetModel object (171)</option>
+
+  <option value="172">AssetModel object (172)</option>
+
+  <option value="173">AssetModel object (173)</option>
+
+  <option value="174">AssetModel object (174)</option>
+
+  <option value="175">AssetModel object (175)</option>
+
+  <option value="176">AssetModel object (176)</option>
+
+  <option value="177">AssetModel object (177)</option>
+
+  <option value="178">AssetModel object (178)</option>
+
+  <option value="179">AssetModel object (179)</option>
+
+  <option value="180">AssetModel object (180)</option>
+
+  <option value="181">AssetModel object (181)</option>
+
+  <option value="182">AssetModel object (182)</option>
+
+  <option value="183">AssetModel object (183)</option>
+
+  <option value="184">AssetModel object (184)</option>
+
+  <option value="185">AssetModel object (185)</option>
+
+  <option value="186">AssetModel object (186)</option>
+
+  <option value="187">AssetModel object (187)</option>
+
+  <option value="188">AssetModel object (188)</option>
+
+  <option value="189">AssetModel object (189)</option>
+
+  <option value="190">AssetModel object (190)</option>
+
+  <option value="191">AssetModel object (191)</option>
+
+  <option value="192">AssetModel object (192)</option>
+
+  <option value="193">AssetModel object (193)</option>
+
+  <option value="194">AssetModel object (194)</option>
+
+  <option value="195">AssetModel object (195)</option>
+
+  <option value="196">AssetModel object (196)</option>
+
+  <option value="197">AssetModel object (197)</option>
+
+  <option value="198">AssetModel object (198)</option>
+
+  <option value="199">AssetModel object (199)</option>
+
+  <option value="200">AssetModel object (200)</option>
+
+  <option value="201">AssetModel object (201)</option>
+
+  <option value="202">AssetModel object (202)</option>
+
+  <option value="203">AssetModel object (203)</option>
+
+  <option value="204">AssetModel object (204)</option>
+
+  <option value="205">AssetModel object (205)</option>
+
+  <option value="206">AssetModel object (206)</option>
+
+  <option value="207">AssetModel object (207)</option>
+
+  <option value="208">AssetModel object (208)</option>
+
+  <option value="209">AssetModel object (209)</option>
+
+  <option value="210">AssetModel object (210)</option>
+
+  <option value="211">AssetModel object (211)</option>
+
+  <option value="212">AssetModel object (212)</option>
+
+  <option value="213">AssetModel object (213)</option>
+
+  <option value="214">AssetModel object (214)</option>
+
+  <option value="215">AssetModel object (215)</option>
+
+  <option value="216">AssetModel object (216)</option>
+
+  <option value="218">AssetModel object (218)</option>
+
+  <option value="219">AssetModel object (219)</option>
+
+  <option value="220">AssetModel object (220)</option>
+
+  <option value="221">AssetModel object (221)</option>
+
+  <option value="222">AssetModel object (222)</option>
+
+  <option value="223">AssetModel object (223)</option>
+
+  <option value="224">AssetModel object (224)</option>
+
+  <option value="225">AssetModel object (225)</option>
+
+  <option value="226">AssetModel object (226)</option>
+
+  <option value="227">AssetModel object (227)</option>
+
+  <option value="228">AssetModel object (228)</option>
+
+  <option value="229">AssetModel object (229)</option>
+
+  <option value="230">AssetModel object (230)</option>
+
+  <option value="231">AssetModel object (231)</option>
+
+  <option value="232">AssetModel object (232)</option>
+
+  <option value="233">AssetModel object (233)</option>
+
+  <option value="234">AssetModel object (234)</option>
+
+  <option value="235">AssetModel object (235)</option>
+
+  <option value="236">AssetModel object (236)</option>
+
+  <option value="237">AssetModel object (237)</option>
+
+  <option value="238">AssetModel object (238)</option>
+
+  <option value="239">AssetModel object (239)</option>
+
+  <option value="240">AssetModel object (240)</option>
+
+  <option value="241">AssetModel object (241)</option>
+
+  <option value="242">AssetModel object (242)</option>
+
+  <option value="243">AssetModel object (243)</option>
+
+  <option value="244">AssetModel object (244)</option>
+
+  <option value="245">AssetModel object (245)</option>
+
+  <option value="246">AssetModel object (246)</option>
+
+  <option value="247">AssetModel object (247)</option>
+
+  <option value="248">AssetModel object (248)</option>
+
+  <option value="249">AssetModel object (249)</option>
+
+  <option value="250">AssetModel object (250)</option>
+
+  <option value="251">AssetModel object (251)</option>
+
+  <option value="252">AssetModel object (252)</option>
+
+  <option value="253">AssetModel object (253)</option>
+
+  <option value="254">AssetModel object (254)</option>
+
+  <option value="255">AssetModel object (255)</option>
+
+  <option value="256">AssetModel object (256)</option>
+
+  <option value="257">AssetModel object (257)</option>
+
+  <option value="258">AssetModel object (258)</option>
+
+  <option value="259">AssetModel object (259)</option>
+
+  <option value="260">AssetModel object (260)</option>
+
+  <option value="261">AssetModel object (261)</option>
+
+  <option value="262">AssetModel object (262)</option>
+
+  <option value="263">AssetModel object (263)</option>
+
+  <option value="264">AssetModel object (264)</option>
+
+  <option value="265">AssetModel object (265)</option>
+
+  <option value="266">AssetModel object (266)</option>
+
+  <option value="267">AssetModel object (267)</option>
+
+  <option value="268">AssetModel object (268)</option>
+
+  <option value="269">AssetModel object (269)</option>
+
+  <option value="270">AssetModel object (270)</option>
+
+  <option value="271">AssetModel object (271)</option>
+
+  <option value="272">AssetModel object (272)</option>
+
+  <option value="273">AssetModel object (273)</option>
+
+  <option value="274">AssetModel object (274)</option>
+
+  <option value="275">AssetModel object (275)</option>
+
+  <option value="276">AssetModel object (276)</option>
+
+  <option value="277">AssetModel object (277)</option>
+
+  <option value="278">AssetModel object (278)</option>
+
+  <option value="279">AssetModel object (279)</option>
+
+  <option value="280">AssetModel object (280)</option>
+
+  <option value="281">AssetModel object (281)</option>
+
+  <option value="282">AssetModel object (282)</option>
+
+  <option value="283">AssetModel object (283)</option>
+
+  <option value="284">AssetModel object (284)</option>
+
+  <option value="285">AssetModel object (285)</option>
+
+  <option value="287">AssetModel object (287)</option>
+
+  <option value="288">AssetModel object (288)</option>
+
+  <option value="289">AssetModel object (289)</option>
+
+  <option value="290">AssetModel object (290)</option>
+
+  <option value="291">AssetModel object (291)</option>
+
+  <option value="292">AssetModel object (292)</option>
+
+  <option value="293">AssetModel object (293)</option>
+
+  <option value="295">AssetModel object (295)</option>
+
+  <option value="296">AssetModel object (296)</option>
+
+  <option value="298">AssetModel object (298)</option>
+
+  <option value="299">AssetModel object (299)</option>
+
+  <option value="300">AssetModel object (300)</option>
+
+  <option value="301">AssetModel object (301)</option>
+
+  <option value="302">AssetModel object (302)</option>
+
+  <option value="303">AssetModel object (303)</option>
+
+  <option value="304">AssetModel object (304)</option>
+
+  <option value="305">AssetModel object (305)</option>
+
+  <option value="306">AssetModel object (306)</option>
+
+  <option value="307">AssetModel object (307)</option>
+
+  <option value="308">AssetModel object (308)</option>
+
+  <option value="309">AssetModel object (309)</option>
+
+  <option value="310">AssetModel object (310)</option>
+
+  <option value="311">AssetModel object (311)</option>
+
+  <option value="312">AssetModel object (312)</option>
+
+  <option value="313">AssetModel object (313)</option>
+
+  <option value="314">AssetModel object (314)</option>
+
+  <option value="315">AssetModel object (315)</option>
+
+  <option value="316">AssetModel object (316)</option>
+
+  <option value="317">AssetModel object (317)</option>
+
+  <option value="318">AssetModel object (318)</option>
+
+  <option value="319">AssetModel object (319)</option>
+
+  <option value="320">AssetModel object (320)</option>
+
+  <option value="322">AssetModel object (322)</option>
+
+  <option value="324">AssetModel object (324)</option>
+
+  <option value="325">AssetModel object (325)</option>
+
+  <option value="326">AssetModel object (326)</option>
+
+  <option value="327">AssetModel object (327)</option>
+
+  <option value="328">AssetModel object (328)</option>
+
+  <option value="329">AssetModel object (329)</option>
+
+  <option value="330">AssetModel object (330)</option>
+
+  <option value="331">AssetModel object (331)</option>
+
+  <option value="332">AssetModel object (332)</option>
+
+  <option value="333">AssetModel object (333)</option>
+
+  <option value="334">AssetModel object (334)</option>
+
+  <option value="335">AssetModel object (335)</option>
+
+  <option value="336">AssetModel object (336)</option>
+
+  <option value="337">AssetModel object (337)</option>
+
+  <option value="338">AssetModel object (338)</option>
+
+  <option value="339">AssetModel object (339)</option>
+
+  <option value="340">AssetModel object (340)</option>
+
+  <option value="341">AssetModel object (341)</option>
+
+  <option value="342">AssetModel object (342)</option>
+
+  <option value="343">AssetModel object (343)</option>
+
+  <option value="344">AssetModel object (344)</option>
+
+  <option value="345">AssetModel object (345)</option>
+
+  <option value="346">AssetModel object (346)</option>
+
+  <option value="347">AssetModel object (347)</option>
+
+  <option value="348">AssetModel object (348)</option>
+
+  <option value="349">AssetModel object (349)</option>
+
+  <option value="350">AssetModel object (350)</option>
+
+  <option value="351">AssetModel object (351)</option>
+
+  <option value="352">AssetModel object (352)</option>
+
+  <option value="353">AssetModel object (353)</option>
+
+  <option value="354">AssetModel object (354)</option>
+
+  <option value="355">AssetModel object (355)</option>
+
+  <option value="356">AssetModel object (356)</option>
+
+  <option value="357">AssetModel object (357)</option>
+
+  <option value="358">AssetModel object (358)</option>
+
+  <option value="359">AssetModel object (359)</option>
+
+  <option value="360">AssetModel object (360)</option>
+
+  <option value="361">AssetModel object (361)</option>
+
+  <option value="362">AssetModel object (362)</option>
+
+  <option value="363">AssetModel object (363)</option>
+
+  <option value="364">AssetModel object (364)</option>
+
+  <option value="365">AssetModel object (365)</option>
+
+  <option value="366">AssetModel object (366)</option>
+
+  <option value="367">AssetModel object (367)</option>
+
+  <option value="368">AssetModel object (368)</option>
+
+  <option value="369">AssetModel object (369)</option>
+
+  <option value="370">AssetModel object (370)</option>
+
+  <option value="371">AssetModel object (371)</option>
+
+  <option value="372">AssetModel object (372)</option>
+
+  <option value="373">AssetModel object (373)</option>
+
+  <option value="374">AssetModel object (374)</option>
+
+  <option value="375">AssetModel object (375)</option>
+
+  <option value="376">AssetModel object (376)</option>
+
+  <option value="377">AssetModel object (377)</option>
+
+  <option value="378">AssetModel object (378)</option>
+
+  <option value="379">AssetModel object (379)</option>
+
+  <option value="380">AssetModel object (380)</option>
+
+  <option value="381">AssetModel object (381)</option>
+
+  <option value="382">AssetModel object (382)</option>
+
+  <option value="383">AssetModel object (383)</option>
+
+  <option value="384">AssetModel object (384)</option>
+
+  <option value="385">AssetModel object (385)</option>
+
+  <option value="386">AssetModel object (386)</option>
+
+  <option value="387">AssetModel object (387)</option>
+
+  <option value="388">AssetModel object (388)</option>
+
+  <option value="389">AssetModel object (389)</option>
+
+  <option value="390">AssetModel object (390)</option>
+
+  <option value="391">AssetModel object (391)</option>
+
+  <option value="392">AssetModel object (392)</option>
+
+  <option value="393">AssetModel object (393)</option>
+
+  <option value="394">AssetModel object (394)</option>
+
+  <option value="395">AssetModel object (395)</option>
+
+  <option value="396">AssetModel object (396)</option>
+
+  <option value="397">AssetModel object (397)</option>
+
+  <option value="398">AssetModel object (398)</option>
+
+  <option value="399">AssetModel object (399)</option>
+
+  <option value="400">AssetModel object (400)</option>
+
+  <option value="401">AssetModel object (401)</option>
+
+  <option value="402">AssetModel object (402)</option>
+
+  <option value="403">AssetModel object (403)</option>
+
+  <option value="404">AssetModel object (404)</option>
+
+  <option value="405">AssetModel object (405)</option>
+
+  <option value="406">AssetModel object (406)</option>
+
+  <option value="407">AssetModel object (407)</option>
+
+  <option value="408">AssetModel object (408)</option>
+
+  <option value="409">AssetModel object (409)</option>
+
+  <option value="410">AssetModel object (410)</option>
+
+  <option value="411">AssetModel object (411)</option>
+
+  <option value="412">AssetModel object (412)</option>
+
+  <option value="413">AssetModel object (413)</option>
+
+  <option value="414">AssetModel object (414)</option>
+
+  <option value="415">AssetModel object (415)</option>
+
+  <option value="416">AssetModel object (416)</option>
+
+  <option value="417">AssetModel object (417)</option>
+
+  <option value="418">AssetModel object (418)</option>
+
+  <option value="419">AssetModel object (419)</option>
+
+  <option value="420">AssetModel object (420)</option>
+
+  <option value="421">AssetModel object (421)</option>
+
+  <option value="422">AssetModel object (422)</option>
+
+  <option value="423">AssetModel object (423)</option>
+
+  <option value="424">AssetModel object (424)</option>
+
+  <option value="425">AssetModel object (425)</option>
+
+  <option value="426">AssetModel object (426)</option>
+
+  <option value="427">AssetModel object (427)</option>
+
+  <option value="428">AssetModel object (428)</option>
+
+  <option value="429">AssetModel object (429)</option>
+
+  <option value="430">AssetModel object (430)</option>
+
+  <option value="431">AssetModel object (431)</option>
+
+  <option value="432">AssetModel object (432)</option>
+
+  <option value="433">AssetModel object (433)</option>
+
+  <option value="434">AssetModel object (434)</option>
+
+  <option value="435">AssetModel object (435)</option>
+
+  <option value="436" selected="">AssetModel object (436)</option>
+
+</select>
+
+
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-serial_number">
+
+
+                <div>
+
+
+                        <label for="id_serial_number">Serial number:</label>
+
+                            <input type="text" name="serial_number" value="CN0WC42GDES0008R5951A01" class="vTextField" maxlength="100" id="id_serial_number">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-imei">
+
+
+                <div>
+
+
+                        <label for="id_imei">Imei:</label>
+
+                            <input type="text" name="imei" class="vTextField" maxlength="50" id="id_imei">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-phone">
+
+
+                <div>
+
+
+                        <label for="id_phone">Phone:</label>
+
+                            <input type="text" name="phone" class="vTextField" maxlength="50" id="id_phone">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-sim">
+
+
+                <div>
+
+
+                        <label for="id_sim">Sim:</label>
+
+                            <input type="text" name="sim" class="vTextField" maxlength="50" id="id_sim">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-mac_address_lan">
+
+
+                <div>
+
+
+                        <label for="id_mac_address_lan">Mac address lan:</label>
+
+                            <input type="text" name="mac_address_lan" class="vTextField" maxlength="100" id="id_mac_address_lan">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-mac_address_wifi">
+
+
+                <div>
+
+
+                        <label for="id_mac_address_wifi">Mac address wifi:</label>
+
+                            <input type="text" name="mac_address_wifi" class="vTextField" maxlength="100" id="id_mac_address_wifi">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-ip_wifi">
+
+
+                <div>
+
+
+                        <label for="id_ip_wifi">Ip wifi:</label>
+
+                            <input type="text" name="ip_wifi" class="vTextField" maxlength="100" id="id_ip_wifi">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-ip_lan">
+
+
+                <div>
+
+
+                        <label for="id_ip_lan">Ip lan:</label>
+
+                            <input type="text" name="ip_lan" class="vTextField" maxlength="100" id="id_ip_lan">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-asset">
+
+
+                <div>
+
+
+                        <label for="id_asset">Asset:</label>
+
+                            <input type="text" name="asset" value="4010025915" class="vTextField" maxlength="100" id="id_asset">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-location">
+
+
+                <div>
+
+
+                        <label for="id_location">Location:</label>
+
+                            <input type="text" name="location" class="vTextField" maxlength="100" id="id_location">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-branch">
+
+
+                <div>
+
+
+                        <label for="id_branch">Branch:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="branch" id="id_branch">
+  <option value="">---------</option>
+
+  <option value="1">Branch object (1)</option>
+
+  <option value="2">Branch object (2)</option>
+
+  <option value="3" selected="">Branch object (3)</option>
+
+  <option value="4">Branch object (4)</option>
+
+  <option value="5">Branch object (5)</option>
+
+  <option value="6">Branch object (6)</option>
+
+  <option value="7">Branch object (7)</option>
+
+  <option value="8">Branch object (8)</option>
+
+  <option value="9">Branch object (9)</option>
+
+  <option value="10">Branch object (10)</option>
+
+  <option value="11">Branch object (11)</option>
+
+  <option value="12">Branch object (12)</option>
+
+  <option value="13">Branch object (13)</option>
+
+  <option value="14">Branch object (14)</option>
+
+  <option value="15">Branch object (15)</option>
+
+  <option value="16">Branch object (16)</option>
+
+  <option value="17">Branch object (17)</option>
+
+  <option value="18">Branch object (18)</option>
+
+  <option value="19">Branch object (19)</option>
+
+  <option value="20">Branch object (20)</option>
+
+  <option value="21">Branch object (21)</option>
+
+  <option value="22">Branch object (22)</option>
+
+</select>
+
+
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-building">
+
+
+                <div>
+
+
+                        <label for="id_building">Building:</label>
+
+                            <input type="text" name="building" class="vTextField" maxlength="100" id="id_building">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-floor">
+
+
+                <div>
+
+
+                        <label for="id_floor">Floor:</label>
+
+                            <input type="text" name="floor" class="vTextField" maxlength="50" id="id_floor">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-status">
+
+
+                <div>
+
+
+                        <label for="id_status">Status:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="status" id="id_status">
+  <option value="">---------</option>
+
+  <option value="1">AssetStatus object (1)</option>
+
+  <option value="2">AssetStatus object (2)</option>
+
+  <option value="3">AssetStatus object (3)</option>
+
+  <option value="4">AssetStatus object (4)</option>
+
+  <option value="5" selected="">AssetStatus object (5)</option>
+
+  <option value="7">AssetStatus object (7)</option>
+
+  <option value="10">AssetStatus object (10)</option>
+
+  <option value="11">AssetStatus object (11)</option>
+
+  <option value="12">AssetStatus object (12)</option>
+
+  <option value="13">AssetStatus object (13)</option>
+
+  <option value="14">AssetStatus object (14)</option>
+
+</select>
+
+
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-po">
+
+
+                <div>
+
+
+                        <label for="id_po">Po:</label>
+
+                            <input type="text" name="po" class="vTextField" maxlength="50" id="id_po">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-invoice">
+
+
+                <div>
+
+
+                        <label for="id_invoice">Invoice:</label>
+
+                            <input type="text" name="invoice" class="vTextField" maxlength="50" id="id_invoice">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-date_stockin">
+
+
+                <div>
+
+
+                        <label for="id_date_stockin">Date stockin:</label>
+
+                            <input type="text" name="date_stockin" class="vDateField" size="10" id="id_date_stockin"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+
+
+                <br><span class="timezonewarning">Note: You are 7 hours ahead of server time.</span></div>
+
+        </div>
+
+        <div class="form-row field-date_stockout">
+
+
+                <div>
+
+
+                        <label for="id_date_stockout">Date stockout:</label>
+
+                            <input type="text" name="date_stockout" class="vDateField" size="10" id="id_date_stockout"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink1"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+
+
+                <br><span class="timezonewarning">Note: You are 7 hours ahead of server time.</span></div>
+
+        </div>
+
+        <div class="form-row field-remark">
+
+
+                <div>
+
+
+                        <label for="id_remark">Remark:</label>
+
+                            <input type="text" name="remark" value="purchase" class="vTextField" maxlength="50" id="id_remark">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-createdate">
+
+
+                <div>
+
+
+                        <label for="id_createdate_0">Createdate:</label>
+
+                            <p class="datetime">
+  Date: <input type="text" name="createdate_0" value="2021-01-05" class="vDateField" size="10" id="id_createdate_0"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink2"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+<br>
+  Time: <input type="text" name="createdate_1" value="11:15:43" class="vTimeField" size="8" id="id_createdate_1"><span class="datetimeshortcuts">&nbsp;<a href="#">Now</a>&nbsp;|&nbsp;<a href="#" id="clocklink0"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 7 hours ahead of server time.</span></p>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-createby">
+
+
+                <div>
+
+
+                        <label for="id_createby">Createby:</label>
+
+                            <input type="text" name="createby" value="nuntiya.dach" class="vTextField" maxlength="50" id="id_createby">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-modifieddate">
+
+
+                <div>
+
+
+                        <label for="id_modifieddate_0">Modifieddate:</label>
+
+                            <p class="datetime">
+  Date: <input type="text" name="modifieddate_0" class="vDateField" size="10" id="id_modifieddate_0"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink3"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+<br>
+  Time: <input type="text" name="modifieddate_1" class="vTimeField" size="8" id="id_modifieddate_1"><span class="datetimeshortcuts">&nbsp;<a href="#">Now</a>&nbsp;|&nbsp;<a href="#" id="clocklink1"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 7 hours ahead of server time.</span></p>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-modifiedby">
+
+
+                <div>
+
+
+                        <label for="id_modifiedby">Modifiedby:</label>
+
+                            <input type="text" name="modifiedby" class="vTextField" maxlength="50" id="id_modifiedby">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-bookno">
+
+
+                <div>
+
+
+                        <label for="id_bookno">Bookno:</label>
+
+                            <input type="text" name="bookno" value="Jane 2021_ HBNAHY1S214" class="vTextField" maxlength="100" id="id_bookno">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-condition_no">
+
+
+                <div>
+
+
+                        <label for="id_condition_no">Condition no:</label>
+
+                            <input type="text" name="condition_no" value="buy" class="vTextField" maxlength="50" id="id_condition_no">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-windows_edition">
+
+
+                <div>
+
+
+                        <label for="id_windows_edition">Windows edition:</label>
+
+                            <input type="text" name="windows_edition" class="vTextField" maxlength="45" id="id_windows_edition">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-win_product_key">
+
+
+                <div>
+
+
+                        <label for="id_win_product_key">Win product key:</label>
+
+                            <input type="text" name="win_product_key" class="vTextField" maxlength="45" id="id_win_product_key">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-office_edition">
+
+
+                <div>
+
+
+                        <label for="id_office_edition">Office edition:</label>
+
+                            <input type="text" name="office_edition" class="vTextField" maxlength="45" id="id_office_edition">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-office_product_key">
+
+
+                <div>
+
+
+                        <label for="id_office_product_key">Office product key:</label>
+
+                            <input type="text" name="office_product_key" class="vTextField" maxlength="45" id="id_office_product_key">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-line">
+
+
+                <div>
+
+
+                        <label for="id_line">Line:</label>
+
+                            <input type="text" name="line" class="vTextField" maxlength="45" id="id_line">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-vpn">
+
+
+                <div>
+
+
+                        <label for="id_vpn">Vpn:</label>
+
+                            <input type="text" name="vpn" class="vTextField" maxlength="45" id="id_vpn">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-cpu">
+
+
+                <div>
+
+
+                        <label for="id_cpu">Cpu:</label>
+
+                            <input type="text" name="cpu" class="vTextField" maxlength="50" id="id_cpu">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-ram">
+
+
+                <div>
+
+
+                        <label for="id_ram">Ram:</label>
+
+                            <input type="text" name="ram" class="vTextField" maxlength="50" id="id_ram">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-storage">
+
+
+                <div>
+
+
+                        <label for="id_storage">Storage:</label>
+
+                            <input type="text" name="storage" class="vTextField" maxlength="50" id="id_storage">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-filepath">
+
+
+                <div>
+
+
+                        <label for="id_filepath">Filepath:</label>
+
+                            <input type="text" name="filepath" class="vTextField" maxlength="100" id="id_filepath">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-costcenter">
+
+
+                <div>
+
+
+                        <label for="id_costcenter">Costcenter:</label>
+
+                            <input type="text" name="costcenter" class="vTextField" maxlength="45" id="id_costcenter">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+
+
+    <p class="deletelink-box"><a href="/admin/asset/assetinformation/7483/delete/" class="deletelink">Delete</a></p>
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+</div>
+
+
+
+    <script type="text/javascript" id="django-admin-form-add-constants" src="/static/admin/js/change_form.js">
+    </script>
+
+
+
+
+<script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form>
+
+
+{% endblock %}
