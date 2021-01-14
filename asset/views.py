@@ -143,7 +143,7 @@ def readExcel(request):
             if i != 0:
                 print("i:" + str(i))
                 for cell in row:
-                    print("j:" + str(j))
+                    print("j:" + str(j)) sdfsdf
                     row_data.append(str(cell.value))
                     if j == 0:
                         assetlist.append(str(cell.value))
