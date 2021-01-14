@@ -144,7 +144,6 @@ def readExcel(request):
                 print("i:" + str(i))
                 for cell in row:
                     print("j:" + str(j))
-                    
                     row_data.append(str(cell.value))
                     if j == 0:
                         assetlist.append(str(cell.value))
