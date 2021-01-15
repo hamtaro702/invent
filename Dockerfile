@@ -1,7 +1,9 @@
-FROM python:3.9.0a5-alpine3.10
-RUN mkdir /code
-COPY . /code/
-WORKDIR /code/
-RUN pip freeze > requirements.txt
-RUN pip install -U pip
+FROM python:3.6-alpine
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /app
+WORKDIR /app
+COPY requirements.txt /app/
 RUN pip install -r requirements.txt
+COPY . /app/
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

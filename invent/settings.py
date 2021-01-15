@@ -83,10 +83,10 @@ DATABASES = {
         'PASSWORD':'11223344',
         'HOST':'dba.haadthip.com',
         'PORT':'3306',
-       # 'ENGINE': 'mysql.connector.django',
-        #'OPTIONS': {
-      #  'autocommit': True,
-       #     },
+        'ENGINE': 'mysql.connector.django',
+        'OPTIONS': {
+        'autocommit': True,
+            },
     }
 }
 
