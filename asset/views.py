@@ -422,7 +422,6 @@ def assetAdd(request):
                   {'systems': systems, 'models': models, 'categorys': categorys, 'brands': brands, 'branchs': branchs,
                    'status': status})
 
-
 def asset(request):
     if request.GET.get('assetid'):
         assetid = request.GET.get('assetid')
