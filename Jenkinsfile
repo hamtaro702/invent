@@ -1,36 +1,13 @@
-pipeline {
-    
-    agent any  
+node {
 
-    stages {
+    checkout scm
 
-        stage('Init'){
-            steps {
-                echo 'Init'
-                echo '******************************'
-            }
-        }
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
-        stage('Yarn Install') {
-            steps {
-                echo 'Yarn Install'
-                echo '******************************'
-            }
-        }
+        def customImage = docker.build("0809031817/invent_web")
 
-        stage('Yarn Build') {
-            steps {
-                echo 'Yarn Build'
-                echo '******************************'
-            }
-        }
+        /* Push the container to the custom Registry */
+        customImage.push()
 
-
-        stage('Deploy') {
-            steps{
-                echo 'Deploy'
-                echo '******************************'
-            }
-        }
     }
 }
