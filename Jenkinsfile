@@ -1,20 +1,17 @@
-pipeline{
+node {
 
-     agent any
+    checkout scm
 
-     stages {
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
-         stage("build") {
+        def customImage = docker.build("0809031817/invent_web")
 
-            steps{
-                echo 'TEST building'
+        /* Push the container to the custom Registry */
+        customImage.push()
+        docker.image('0809031817/invent_web').withRun('-p 8001:8000')
 
-            }
-         }
-
-
-     }
-
+    }
+}
 
 
 
