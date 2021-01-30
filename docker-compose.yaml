@@ -3,16 +3,20 @@ version: '3'
 services:
   web:
     build: .
-    command: gunicorn -w 2 invent.wsgi:application --bind 0.0.0.0:8000
+    #image: 0809031817/invent_invent
+    command: sh -c "python manage.py collectstatic --noinput && gunicorn -w 2 invent.wsgi:application --bind 0.0.0.0:8000"
     volumes:
-    - .:/app
-
+      - static_volume:/home/app/static/
+      #- .:/app
+    ports:
+      - 8000:8000
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/app/static/
     ports:
-      - 8000:8000
+      - 80:80
+    # port 80:80 รับมาจาก external เข้าไป map ใน container
     depends_on:
       - web
 

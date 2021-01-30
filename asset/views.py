@@ -1,12 +1,12 @@
 from datetime import datetime, date
 import pytz
+
 datetime.utcnow().replace(tzinfo=pytz.utc)
 
 from django.core.paginator import EmptyPage, Paginator, InvalidPage
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.db.models import Q
-
 
 from django.views.decorators.cache import cache_page
 import openpyxl
@@ -31,7 +31,6 @@ def export_users_xls(request):
 
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
-
 
     columns = ['asset_id', 'Status', 'System', 'Category',
                'Host Name', 'User', 'Brand Name', 'Model Name', 'Serial Number',
@@ -67,7 +66,6 @@ def export_users_xls(request):
         row_num += 1
         for col_num in range(len(row)):
             ws.write(row_num, col_num, row[col_num], font_style)
-
 
     wb.save(response)
     return response
@@ -238,70 +236,133 @@ def readExcel(request):
                     j = j + 1
                 excel_data.append(row_data)
                 j = 0
-                data = AssetInformation.objects.get(asset_id=assetlist[i - 1])
-                print(assetlist[i - 1])
-                if Branch.objects.filter(branch_name=branchlist[i - 1]):
-                    branch = Branch.objects.get(branch_name__exact=branchlist[i - 1])
-                    data.branch_id = branch.branch_id
-                if AssetStatus.objects.filter(status_name=statuslist[i - 1]):
-                    status = AssetStatus.objects.get(status_name__exact=statuslist[i - 1])
-                    data.status_id = status.status_id
-                if AssetSystem.objects.filter(system_name=systemlist[i - 1]):
-                    system = AssetSystem.objects.get(system_name__exact=systemlist[i - 1])
-                    data.system_id = system.system_id
-                if AssetCategory.objects.filter(category_name=categorylist[i - 1]):
-                    print(categorylist[i - 1])
-                    category = AssetCategory.objects.get(category_name__exact=categorylist[i - 1])
-                    data.category_id = category.category_id
+                # Update AssetInformation
+                if assetlist[i - 1] != "None":
+                    data = AssetInformation.objects.get(asset_id=assetlist[i - 1])
+                    print(assetlist[i - 1])
+                    if Branch.objects.filter(branch_name=branchlist[i - 1]):
+                        branch = Branch.objects.get(branch_name__exact=branchlist[i - 1])
+                        data.branch_id = branch.branch_id
+                    if AssetStatus.objects.filter(status_name=statuslist[i - 1]):
+                        status = AssetStatus.objects.get(status_name__exact=statuslist[i - 1])
+                        data.status_id = status.status_id
+                    if AssetSystem.objects.filter(system_name=systemlist[i - 1]):
+                        system = AssetSystem.objects.get(system_name__exact=systemlist[i - 1])
+                        data.system_id = system.system_id
+                    if AssetCategory.objects.filter(category_name=categorylist[i - 1]):
+                        print(categorylist[i - 1])
+                        category = AssetCategory.objects.get(category_name__exact=categorylist[i - 1])
+                        data.category_id = category.category_id
 
-                data.host_name = hostnamelist[i - 1]
-                data.user = userlist[i - 1]
+                    data.host_name = hostnamelist[i - 1]
+                    data.user = userlist[i - 1]
 
-                if AssetBrand.objects.filter(brand_name=brandlist[i - 1]):
-                    brand = AssetBrand.objects.get(brand_name=brandlist[i - 1])
-                    data.brand_id = brand.brand_id
-                if AssetModel.objects.filter(model_name=modellist[i - 1]):
-                    model = AssetModel.objects.get(model_name=modellist[i - 1])
-                    data.model_id = model.model_id
+                    if AssetBrand.objects.filter(brand_name=brandlist[i - 1]):
+                        brand = AssetBrand.objects.get(brand_name=brandlist[i - 1])
+                        data.brand_id = brand.brand_id
+                    if AssetModel.objects.filter(model_name=modellist[i - 1]):
+                        model = AssetModel.objects.get(model_name=modellist[i - 1])
+                        data.model_id = model.model_id
 
-                data.serial_number = serialnumberlist[i - 1]
-                data.mac_address_lan = maclanlist[i - 1]
-                data.mac_address_wifi = macwifilist[i - 1]
-                data.ip_wifi = ipwifilist[i - 1]
-                data.ip_lan = iplanlist[i - 1]
-                data.asset = assetnolist[i - 1]
-                data.bookno = booknolist[i - 1]
-                data.costcenter = costcenterlist[i - 1]
-                data.location = departmentlist[i - 1]
-                data.building = buildinglist[i - 1]
-                data.floor = floorlist[i - 1]
-                data.project = projectlist[i - 1]
-                data.device_name = devicelist[i - 1]
-                data.imei = imeilist[i - 1]
-                data.phone = phonenumberlist[i - 1]
-                data.sim = simlist[i - 1]
-                data.po = polist[i - 1]
-                data.invoice = invoicelist[i - 1]
-                data.date_stockin = stockinlist[i - 1]
-                data.date_stockout = stockoutlist[i - 1]
-                data.remark = remarklist[i - 1]
-                data.createdate = createdatelist[i - 1]
-                data.createby = createbylist[i - 1]
-                data.modifieddate = datetime.now()
-                data.modifiedby = modifiedbylist[i - 1]
-                data.condition_no = conditionnolist[i - 1]
-                data.windows_edition = windows_editionlist[i - 1]
-                data.win_product_key = win_product_keylist[i - 1]
-                data.office_edition = office_editionlist[i - 1]
-                data.office_product_key = office_product_keylist[i - 1]
-                data.line = linelist[i - 1]
-                data.vpn = vpnlist[i - 1]
-                data.cpu = cpulist[i - 1]
-                data.ram = ramlist[i - 1]
-                data.storage = storagelist[i - 1]
-                data.filepath = filelist[i - 1]
+                    data.serial_number = serialnumberlist[i - 1]
+                    data.mac_address_lan = maclanlist[i - 1]
+                    data.mac_address_wifi = macwifilist[i - 1]
+                    data.ip_wifi = ipwifilist[i - 1]
+                    data.ip_lan = iplanlist[i - 1]
+                    data.asset = assetnolist[i - 1]
+                    data.bookno = booknolist[i - 1]
+                    data.costcenter = costcenterlist[i - 1]
+                    data.location = departmentlist[i - 1]
+                    data.building = buildinglist[i - 1]
+                    data.floor = floorlist[i - 1]
+                    data.project = projectlist[i - 1]
+                    data.device_name = devicelist[i - 1]
+                    data.imei = imeilist[i - 1]
+                    data.phone = phonenumberlist[i - 1]
+                    data.sim = simlist[i - 1]
+                    data.po = polist[i - 1]
+                    data.invoice = invoicelist[i - 1]
 
-                data.save()
+                    if stockinlist[i - 1] != "None" and stockinlist[i - 1] != '0000-00-00':
+                        data.date_stockin = stockinlist[i - 1]
+                    if stockoutlist[i - 1] != "None" and stockoutlist[i - 1] != '0000-00-00':
+                        data.date_stockout = stockoutlist[i - 1]
+
+                    data.remark = remarklist[i - 1]
+                    if createdatelist[i - 1] != "None":
+                        data.createdate = createdatelist[i - 1]
+                    data.createby = createbylist[i - 1]
+                    data.modifieddate = datetime.now()
+                    data.modifiedby = modifiedbylist[i - 1]
+                    data.condition_no = conditionnolist[i - 1]
+                    data.windows_edition = windows_editionlist[i - 1]
+                    data.win_product_key = win_product_keylist[i - 1]
+                    data.office_edition = office_editionlist[i - 1]
+                    data.office_product_key = office_product_keylist[i - 1]
+                    data.line = linelist[i - 1]
+                    data.vpn = vpnlist[i - 1]
+                    data.cpu = cpulist[i - 1]
+                    data.ram = ramlist[i - 1]
+                    data.storage = storagelist[i - 1]
+                    data.filepath = filelist[i - 1]
+                    data.save()
+                    print("Update data have been Saved")
+                # Insert AssetInformation
+                else:
+                    if Branch.objects.filter(branch_name=branchlist[i - 1]):
+                        branch = Branch.objects.get(branch_name__exact=branchlist[i - 1])
+                    if AssetStatus.objects.filter(status_name=statuslist[i - 1]):
+                        status = AssetStatus.objects.get(status_name__exact=statuslist[i - 1])
+                    if AssetSystem.objects.filter(system_name=systemlist[i - 1]):
+                        system = AssetSystem.objects.get(system_name__exact=systemlist[i - 1])
+                    if AssetCategory.objects.filter(category_name=categorylist[i - 1]):
+                        category = AssetCategory.objects.get(category_name__exact=categorylist[i - 1])
+                    if AssetBrand.objects.filter(brand_name=brandlist[i - 1]):
+                        brand = AssetBrand.objects.get(brand_name=brandlist[i - 1])
+                    if AssetModel.objects.filter(model_name=modellist[i - 1]):
+                        model = AssetModel.objects.get(model_name=modellist[i - 1])
+                        tmp_stockin =None
+                        tmp_stockout =None
+                    if stockinlist[i - 1] != "None" and stockinlist[i - 1] != '0000-00-00':
+                        tmp_stockin = stockinlist[i - 1]
+                    if stockoutlist[i - 1] != "None" and stockoutlist[i - 1] != '0000-00-00':
+                        tmp_stockout = stockoutlist[i - 1]
+
+                    data = AssetInformation \
+                        (system_id=system.system_id, remark=remarklist[i - 1],
+                         category_id=category.category_id, host_name=hostnamelist[i - 1],
+                         project=projectlist[i - 1], device_name=devicelist[i - 1],
+                         user=userlist[i - 1], brand_id=brand.brand_id,
+                         model_id=model.model_id, serial_number=serialnumberlist[i - 1]
+                         , imei=imeilist[i - 1], phone=phonenumberlist[i - 1],
+                         sim=simlist[i - 1],
+                         mac_address_lan=maclanlist[i - 1]
+                         , mac_address_wifi=macwifilist[i - 1],
+                         ip_wifi=ipwifilist[i - 1],
+                         ip_lan=iplanlist[i - 1],
+                         asset=assetnolist[i - 1],
+                         location=departmentlist[i - 1], branch_id=branch.branch_id,
+                         status_id=status.status_id,
+                         building=buildinglist[i - 1], floor=floorlist[i - 1],
+                         po=polist[i - 1], invoice=invoicelist[i - 1],
+                         bookno=booknolist[i - 1],
+                         condition_no=conditionnolist[i - 1],
+                         windows_edition=windows_editionlist[i - 1],
+                         win_product_key=win_product_keylist[i - 1],
+                         office_edition=office_editionlist[i - 1],
+                         date_stockin=tmp_stockin,
+                         date_stockout=tmp_stockout,
+                         createdate=datetime.now(),
+                         createby=createbylist[i - 1],
+                         modifieddate=datetime.now(),
+                         modifiedby=modifiedbylist[i - 1],
+                         line=linelist[i - 1],
+                         office_product_key=office_product_keylist[i - 1],
+                         vpn=vpnlist[i - 1], cpu=cpulist[i - 1],
+                         ram=ramlist[i - 1], storage=storagelist[i - 1],
+                         filepath=filelist[i - 1], costcenter=costcenterlist[i - 1])
+                    data.save()
+                    print("Insert data have been Saved")
             i = i + 1
 
         return render(request, 'upload.html', {"excel_data": excel_data})
@@ -422,6 +483,7 @@ def assetAdd(request):
                   {'systems': systems, 'models': models, 'categorys': categorys, 'brands': brands, 'branchs': branchs,
                    'status': status})
 
+
 def asset(request):
     if request.GET.get('assetid'):
         assetid = request.GET.get('assetid')
@@ -504,7 +566,7 @@ def saveFrom(request):
                                 , imei=request.POST['imei'], phone=request.POST['phone'], sim=request.POST['sim'],
                                 mac_address_lan=request.POST['mac_address_lan']
                                 , mac_address_wifi=request.POST['mac_address_wifi'], ip_wifi=request.POST['ip_wifi'],
-                                asset=request.POST['asset'],
+                                ip_lan=request.POST['ip_lan'], asset=request.POST['asset'],
                                 location=request.POST['location'], branch_id=request.POST['branch'],
                                 status_id=request.POST['status_id'],
                                 building=request.POST['building'], floor=request.POST['floor'],
