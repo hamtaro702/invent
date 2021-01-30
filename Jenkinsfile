@@ -8,7 +8,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
-        docker.image('0809031817/invent_web').withRun('-p 8001:8000')
+        //docker.image('0809031817/invent_web').withRun('-p 8001:8000')
 
     }
 }
