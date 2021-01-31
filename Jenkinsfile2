@@ -9,7 +9,7 @@ node {
         remote.password = password
 
         stage("SSH Steps Rocks!") {
-           // writeFile file: 'test.sh', text: 'ls'
+           writeFile file: 'test.sh', text: 'ls'
             sshCommand remote: remote, command:  '''if docker ps -a | grep invent-Jenkins
                                                     then
                                                     docker rm -f invent-Jenkins
