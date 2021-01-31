@@ -2,14 +2,14 @@ def remote = [:]
 remote.name = "kub3"
 remote.host = "192.168.61.53"
 remote.allowAnyHosts = true
-
+checkout scm
 node {
     withCredentials([usernamePassword(credentialsId: 'kub3', passwordVariable: 'password', usernameVariable: 'userName')]) {
         remote.user = userName
         remote.password = password
 
         stage("Build Image Docker"){
-            checkout scm
+            
 
             docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
@@ -17,10 +17,10 @@ node {
 
             /* Push the container to the custom Registry */
              customImage.push()  
-
+            }
 
         }
-        
+
         stage("SSH Steps Rocks!") {
            writeFile file: 'test.sh', text: 'ls'
             sshCommand remote: remote, command:  '''if docker ps -a | grep invent-Jenkins
