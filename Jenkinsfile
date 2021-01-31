@@ -2,7 +2,7 @@ def remote = [:]
 remote.name = "kub3"
 remote.host = "192.168.61.53"
 remote.allowAnyHosts = true
-checkout scm
+
 node {
     withCredentials([usernamePassword(credentialsId: 'kub3', passwordVariable: 'password', usernameVariable: 'userName')]) {
         remote.user = userName
@@ -10,7 +10,7 @@ node {
 
         stage("Build Image Docker"){
             
-
+            checkout scm    
             docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
             def customImage = docker.build("0809031817/invent_web")
