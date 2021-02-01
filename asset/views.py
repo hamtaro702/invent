@@ -55,7 +55,7 @@ def export_users_xls(request):
                                                   'floor', 'project', 'device_name', 'imei', 'phone', 'sim', 'po',
                                                   'invoice', 'date_stockin',
                                                   'date_stockout', 'remark', 'createdate', 'createby', 'modifieddate',
-                                                  'modifiedby', 'status_name',
+                                                  'modifiedby', 'condition_no',
                                                   'windows_edition', 'win_product_key', 'office_edition',
                                                   'office_product_key', 'line',
                                                   'vpn', 'cpu', 'ram', 'storage', 'filepath'
