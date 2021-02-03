@@ -321,8 +321,10 @@ def readExcel(request):
                         brand = AssetBrand.objects.get(brand_name=brandlist[i - 1])
                     if AssetModel.objects.filter(model_name=modellist[i - 1]):
                         model = AssetModel.objects.get(model_name=modellist[i - 1])
-                        tmp_stockin =None
-                        tmp_stockout =None
+
+                    tmp_stockin =None
+                    tmp_stockout =None
+
                     if stockinlist[i - 1] != "None" and stockinlist[i - 1] != '0000-00-00':
                         tmp_stockin = stockinlist[i - 1]
                     if stockoutlist[i - 1] != "None" and stockoutlist[i - 1] != '0000-00-00':
